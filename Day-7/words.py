@@ -1,0 +1,1 @@
+word_list = ["Sekiro", "DarkSouls", "EldenRing", "CrossCode", "ToTheMoon", "OuterWilds", "GhostRunner"]
