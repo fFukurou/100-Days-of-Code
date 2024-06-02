@@ -1,3 +1,5 @@
+#Coffee Machine Project
+
 from data import MENU, resources
 import os
 
