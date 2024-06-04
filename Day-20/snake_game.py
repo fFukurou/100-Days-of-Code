@@ -1,5 +1,6 @@
+#Snake Game Project Part 1
+
 import time
-from tracemalloc import Snapshot
 from turtle import Screen, Turtle
 from snake import Snake
 
