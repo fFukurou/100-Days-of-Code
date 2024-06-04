@@ -17,6 +17,9 @@ for color in colors:
 
 print(rgb_colors) """
 
+screen = Screen()
+screen.bgcolor('black')
+
 t.colormode(255)
 bruh = t.Turtle()
 bruh.speed(2000)
@@ -52,6 +55,4 @@ for dot_count in range(1, number_of_dots + 1):
 
 
 
-
-screen = Screen()
 screen.exitonclick()

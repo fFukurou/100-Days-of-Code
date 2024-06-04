@@ -7,6 +7,8 @@ bruh.shape('turtle')
 bruh.color('DarkBlue')
 t.colormode(255)
 
+screen = Screen()
+screen.bgcolor('black')
 
 def random_color():
     r = random.randint(0, 255)
@@ -61,5 +63,5 @@ draw_spirograph(10)
 
 
 """
-screen = Screen()
+
 screen.exitonclick()

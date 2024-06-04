@@ -8,6 +8,7 @@ colors = ["red", "orange", "yellow", "green", "blue", "purple"]
 turtles = []
 
 screen = Screen() 
+screen.bgcolor('black')
 screen.setup(width=500, height=400)
 while True: 
     user_bet = screen.textinput(title="Make your bet", prompt= "Which turtle will win the race? Type a color (red/orange/yellow/green/blue/purple):  ")
@@ -38,8 +39,12 @@ while is_race_on:
 
             if winning_turtle == user_bet:
                 print(f"You've won! The {winning_turtle} turtle is the winner!")
+                turtle.goto(0, 0)
+                turtle.write(f"You've won! The {winning_turtle} turtle is the winner!",font=("Arial",10,"normal"))
             else:
                 print(f"You've lost! The {winning_turtle} turtle is the winner!")
+                turtle.goto(0, 0)
+                turtle.write(f"You've lost! The {winning_turtle} turtle is the winner!",font=("Arial",10,"normal"))
 
 
 screen.exitonclick()

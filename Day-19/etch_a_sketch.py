@@ -2,7 +2,9 @@ import dis
 from turtle import Turtle, Screen
 
 bruh = Turtle()
+bruh.pencolor('white')
 screen = Screen()
+screen.bgcolor('black')
 
 def move_forwards():
     bruh.forward(10)
