@@ -23,12 +23,12 @@ def random_color():
 
 
 #Shapes
-""" 
-for i in range (3, 11):
+bruh.speed(200000)
+for i in range (3, 100):
     bruh.color(random_color())
     for j in range (i):
         bruh.forward(100)
-        bruh.right(360/i) """
+        bruh.right(360/i)
 
 #Random Walk
 """ directions = [0, 90, 180, 270]
@@ -49,7 +49,7 @@ for i in range(1, 361):
     bruh.right(1) """
 
 #Spirograph 2
-bruh.speed(2000)
+""" bruh.speed(2000)
 
 def draw_spirograph(gap_size):
     for _ in range(int(360 / gap_size)):
@@ -60,6 +60,6 @@ def draw_spirograph(gap_size):
 draw_spirograph(10)
 
 
-
+"""
 screen = Screen()
 screen.exitonclick()
