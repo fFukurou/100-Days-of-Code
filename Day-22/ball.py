@@ -9,7 +9,9 @@ class Ball(Turtle):
         super().__init__()
         self.shape('circle')
         self.color('white')
+        self.draw_dashed_line()
         self.penup()
+        self.goto(0, 0)
         self.x_move = 5
         self.y_move = 5
         self.move_speed = 0.035
@@ -42,3 +44,14 @@ class Ball(Turtle):
 
     def reset_pos_r(self):
         self.reset_pos()
+
+    def draw_dashed_line(self):
+        self.goto(0, -300)
+        self.setheading(90)
+        for i in range(1000):
+            if int(i/20)%2==1:
+                self.pencolor('white')
+            else:
+                self.pencolor('black')
+            self.forward(1)
+            self.pencolor('black')
