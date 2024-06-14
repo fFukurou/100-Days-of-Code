@@ -39,9 +39,11 @@ while game_is_on:
     if score >= 50:
         game_is_on = False
 
-for state in data["state"]:
+""" for state in data["state"]:
     if state not in correct_guesses:
-        states_to_learn.append(state)
+        states_to_learn.append(state) """
+
+states_to_learn = [m_state for m_state in data["state"] if m_state not in correct_guesses]
 
 pd.DataFrame(states_to_learn).to_csv("Day-25/US_states/missing_states.csv")
 
