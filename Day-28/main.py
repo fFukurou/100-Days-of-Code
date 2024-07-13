@@ -2,9 +2,6 @@
 
 from tkinter import * #type: ignore
 import math
-
-from numpy import short
-
 # ---------------------------- CONSTANTS ------------------------------- #
 DEEP_BLUE = "#17153B"
 NAVY = "#2E236C"
