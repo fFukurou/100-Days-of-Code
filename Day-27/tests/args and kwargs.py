@@ -29,4 +29,4 @@ class Car:
 
 my_car = Car(make="idk bruh", model="carsamiright", seats=7)
 
-print(my_car.seats)
+print(my_car.color)
