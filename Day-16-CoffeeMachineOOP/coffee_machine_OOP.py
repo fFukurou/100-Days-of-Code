@@ -16,7 +16,7 @@ while is_on:
     if answer == 'latte' or answer == 'cappuccino' or answer == 'espresso':
         order = menu.find_drink(answer)
         if machine.is_resource_sufficient(order) is True:
-            if moneyMachine.make_payment(order.cost) is True:
+            if moneyMachine.make_payment(order.cost) is True: #type: ignore
                 machine.make_coffee(order)
 
 
