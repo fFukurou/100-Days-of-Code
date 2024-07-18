@@ -1,5 +1,5 @@
 #Rain Alert Project
-#CAUTION !!! Running this file will subtract dollars from the Twilio free trial account.
+#CAUTION !!! Running this file will subtract dollars from the Twilio free trial account... IF it is raining at the LAT and LNG provided.
 
 import smtplib
 import requests
