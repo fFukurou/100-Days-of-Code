@@ -20,7 +20,6 @@ exercise = input("What was your exercise today?")
 headers = {
     "x-app-id": APP_ID,
     "x-app-key": API_KEY,
-    "Authorization": f"Bearer {TOKEN}"
 }
 
 params = {
@@ -60,10 +59,13 @@ exercise_dict = {
 
 
 sheety_endpoint = f"https://api.sheety.co/{USERNAME}/{PROJECT_NAME}/{SHEET_NAME}"
-
+sheety_headers = {
+    "Authorization": f"Bearer {TOKEN}",
+    "Content-Type": "application/json"
+}
 
 #Create a Row
-response = requests.post(sheety_endpoint, json=exercise_dict)
+response = requests.post(sheety_endpoint, json=exercise_dict, headers=sheety_headers)
 print(response.json())
 
 #Delete a Row
