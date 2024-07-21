@@ -5,10 +5,6 @@ from dotenv import load_dotenv
 from personal_info import *
 from pprint import pprint
 
-# Load environment variables from .env file
-load_dotenv()
-
-SHEETY_PRICES_ENDPOINT = f"https://api.sheety.co/{SHEET_USERNAME}/{PROJECT_NAME}/{SHEET_NAME}"
 
 class DataManager:
 
@@ -17,6 +13,7 @@ class DataManager:
         self._password = SHEETY_PASSWORD
         self._authorization = HTTPBasicAuth(self._user, self._password)
         self.destination_data = {}
+        self.customer_data = {}
 
     def get_destination_data(self):
         self.headers = {
@@ -26,19 +23,17 @@ class DataManager:
         # Use the Sheety API to GET all the data in that sheet and print it out.
         response = requests.get(url=SHEETY_PRICES_ENDPOINT, headers=self.headers)
         data = response.json()
-        pprint(data)
         self.destination_data = data["prices"]
         # Try importing pretty print and printing the data out again using pprint() to see it formatted.
         return self.destination_data
 
-    # In the DataManager Class make a PUT request and use the row id from sheet_data
-    # to update the Google Sheet with the IATA codes. (Do this using code).
+    # updating the Google Sheet with the IATA codes.
     def update_destination_codes(self):
         for city in self.destination_data:
             new_data = {
                 "price": {
                     "iataCode": city["iataCode"]
-                }
+                } 
             }
             response = requests.put(
                 url=f"{SHEETY_PRICES_ENDPOINT}/{city['id']}",
@@ -46,3 +41,17 @@ class DataManager:
                 headers=self.headers,
             )
             print(response.text)
+
+    def get_customer_emails(self):
+        response = requests.get(url=SHEETY_USERS_ENDPOINT, headers=self.headers)
+        data = response.json()
+        self.customer_data = data["users"]
+        print(self.customer_data)
+        return self.customer_data
+    
+
+
+headers = {
+            "Authorization": f"Bearer {SHEETY_BEARER_TOKEN}",
+            "Content-Type": "application/json"
+        }

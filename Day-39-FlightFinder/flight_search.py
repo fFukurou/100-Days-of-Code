@@ -37,7 +37,7 @@ class FlightSearch:
             str: The new access token obtained from the API response.
         """
         # Header with content type as per Amadeus documentation
-        header = {
+        headers = {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
         body = {
@@ -45,7 +45,7 @@ class FlightSearch:
             'client_id': self._api_key,
             'client_secret': self._api_secret
         }
-        response = requests.post(url=TOKEN_ENDPOINT, headers=header, data=body)
+        response = requests.post(url=TOKEN_ENDPOINT, headers=headers, data=body)
 
         # New bearer token. Typically expires in 1799 seconds (30min)
         print(f"Your token is {response.json()['access_token']}")
@@ -95,11 +95,12 @@ class FlightSearch:
 
         return code
 
-    def check_flights(self, origin_city_code, destination_city_code, from_time, to_time):
+    def check_flights(self, origin_city_code, destination_city_code, from_time, to_time, is_direct = True):
         """
         Searches for flight options between two cities on specified departure and return dates
         using the Amadeus API.
         Parameters:
+            is_direct (bool): True for non-stop flights.
             origin_city_code (str): The IATA code of the departure city.
             destination_city_code (str): The IATA code of the destination city.
             from_time (datetime): The departure date.
@@ -121,7 +122,7 @@ class FlightSearch:
             "departureDate": from_time.strftime("%Y-%m-%d"),
             "returnDate": to_time.strftime("%Y-%m-%d"),
             "adults": 1,
-            "nonStop": "true",
+            "nonStop": "true" if is_direct else "false",
             "currencyCode": "GBP",
             "max": "10",
         }
