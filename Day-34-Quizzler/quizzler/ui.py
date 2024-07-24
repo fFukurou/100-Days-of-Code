@@ -15,8 +15,8 @@ class QuizInterface:
         self.score_label.grid(row=0, column=1)
 
         self.canvas = Canvas(width=300, height=250, bg="white")
-        right_btn_img = PhotoImage(file="Day-34/quizzler/images/true.png")
-        wrong_btn_img = PhotoImage(file="Day-34/quizzler/images/false.png")
+        right_btn_img = PhotoImage(file="Day-34-Quizzler/quizzler/images/true.png")
+        wrong_btn_img = PhotoImage(file="Day-34-Quizzler/quizzler/images/false.png")
         self.question_text = self.canvas.create_text(150, 125, font=("Arial", 14, "italic"), fill=THEME_COLOR, width=280)
         self.canvas.grid(row=1, column=0, columnspan=2, pady=50)
 

@@ -11,5 +11,5 @@ soup = BeautifulSoup(web_page, "html.parser")
 titles = [f"{title.getText()}\n" for title in soup.find_all(name="h3", class_="title")]
 titles.reverse()
 
-with open ("Day-45/100_Movies/movies.txt", "w", encoding="utf8") as file:
+with open ("Day-45-Scraping/100_Movies/movies.txt", "w", encoding="utf8") as file:
     file.writelines(titles)

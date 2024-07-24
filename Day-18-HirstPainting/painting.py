@@ -7,7 +7,7 @@ import random
 #Extracts colors from an image
 """ 
 rgb_colors = []
-colors = colorgram.extract('./Day-18/image.jpg', 30)
+colors = colorgram.extract('Day-18-HirstPainting/image.jpg', 30)
 for color in colors:
     r = color.rgb.r
     g = color.rgb.g

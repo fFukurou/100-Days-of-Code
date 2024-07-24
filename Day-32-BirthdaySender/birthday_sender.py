@@ -14,7 +14,7 @@ today = (today_date.month, today_date.day)
 
 # -------------------- READING FROM CSV FILE --------------------- #
 
-dataframe = pd.read_csv("Day-32/birthdays.csv")
+dataframe = pd.read_csv("Day-32-BirthdaySender/birthdays.csv")
 
 birthdays_dict = {(data_row.month, data_row.day): data_row for (index, data_row) in dataframe.iterrows()}
 
@@ -22,7 +22,7 @@ birthdays_dict = {(data_row.month, data_row.day): data_row for (index, data_row)
 
 if today in birthdays_dict:
     letter_nmb = random.randint(1, 3)
-    with open(f"Day-32/letter_templates/letter_{letter_nmb}.txt", "r") as file:
+    with open(f"Day-32-BirthdaySender/letter_templates/letter_{letter_nmb}.txt", "r") as file:
         letter = file.read()
         formatted_letter = letter.replace("[NAME]", f"{birthdays_dict[today]["name"]}")
 

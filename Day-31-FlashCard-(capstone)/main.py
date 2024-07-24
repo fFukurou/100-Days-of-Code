@@ -10,10 +10,10 @@ BACKGROUND_COLOR = "#B1DDC6"
 # ---------------------------- SHOWING FLASH CARDS ------------------------------- #
 
 try:
-    dataframe = pd.read_csv("Day-31-capstone/data/words_to_learn.csv")
+    dataframe = pd.read_csv("Day-31-FlashCard-(capstone)/data/words_to_learn.csv")
 
 except FileNotFoundError:
-    original_dataframe = pd.read_csv("Day-31-capstone/data/french_words.csv")
+    original_dataframe = pd.read_csv("Day-31-FlashCard-(capstone)/data/french_words.csv")
 
     to_learn = original_dataframe.to_dict(orient="records")
     
@@ -46,7 +46,7 @@ def flip():
 def is_known():
     to_learn.remove(current_card)
     data = pd.DataFrame(to_learn)
-    data.to_csv("Day-31-capstone/data/words_to_learn.csv", index=False)
+    data.to_csv("Day-31-FlashCard-(capstone)/data/words_to_learn.csv", index=False)
 
 
     next_card()
@@ -61,10 +61,10 @@ window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 timer = window.after(3000, flip)
 
 canvas = Canvas(width=800, height=526, bg=BACKGROUND_COLOR, highlightthickness=0)
-bg_img = PhotoImage(file="Day-31-capstone/images/card_back.png")
-front_img = PhotoImage(file="Day-31-capstone/images/card_front.png")
-right_btn_img = PhotoImage(file="Day-31-capstone/images/right.png")
-wrong_btn_img = PhotoImage(file="Day-31-capstone/images/wrong.png")
+bg_img = PhotoImage(file="Day-31-FlashCard-(capstone)/images/card_back.png")
+front_img = PhotoImage(file="Day-31-FlashCard-(capstone)/images/card_front.png")
+right_btn_img = PhotoImage(file="Day-31-FlashCard-(capstone)/images/right.png")
+wrong_btn_img = PhotoImage(file="Day-31-FlashCard-(capstone)/images/wrong.png")
 canvas_img = canvas.create_image(400, 263, image=front_img)
 language_txt = canvas.create_text(400, 125, text="Title", font=("Arial", 40, "italic"))
 word_txt = canvas.create_text(400, 263, text="word", font=("Arial", 60, "bold"))

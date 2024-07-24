@@ -11,10 +11,10 @@
 
 names_list = []
 
-with open(f"Day-24/mail_merge/Input/Letters/starting_letter.txt") as file:
+with open(f"Day-24-MailMerge/mail_merge/Input/Letters/starting_letter.txt") as file:
     starting_letter = file.read()
 
-with open(f"Day-24/mail_merge/Input/Names/invited_names.txt") as file:
+with open(f"Day-24-MailMerge/mail_merge/Input/Names/invited_names.txt") as file:
     names_list = file.readlines()
 
 """ print(starting_letter)
@@ -22,7 +22,7 @@ for name in names_list:
     print(name.strip()) """
 
 for name in names_list:
-    with open(f"Day-24/mail_merge/Output/ReadyToSend/letter_for_{name.strip()}.txt", 'w') as file:
+    with open(f"Day-24-MailMerge/mail_merge/Output/ReadyToSend/letter_for_{name.strip()}.txt", 'w') as file:
         final_letter = starting_letter.replace("[name]", f"{name.strip()}")
         file.write(f"{final_letter}")
 

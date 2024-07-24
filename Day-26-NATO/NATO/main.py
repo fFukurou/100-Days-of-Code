@@ -4,7 +4,7 @@ import pandas as pd
 #TODO 1. Create a dictionary in this format:
 #{"A": "Alfa", "B": "Bravo"}
 
-nato_dataframe = pd.read_csv("Day-26/NATO/nato_phonetic_alphabet.csv")
+nato_dataframe = pd.read_csv("Day-26-NATO/NATO/nato_phonetic_alphabet.csv")
 
 nato_dict = {row['letter']:row['code'] for (index, row) in nato_dataframe.iterrows()}
 

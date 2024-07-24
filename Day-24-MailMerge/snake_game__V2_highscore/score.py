@@ -9,7 +9,7 @@ class Score(Turtle):
     def __init__(self) -> None:
         super().__init__()
         self.score = 0
-        with open("Day-24/snake_game__V2_highscore/data.txt", 'r') as file:
+        with open("Day-24-MailMerge/snake_game__V2_highscore/data.txt", 'r') as file:
             self.highscore = int(file.read())
 
         self.color('white')
@@ -25,7 +25,7 @@ class Score(Turtle):
 
     def increase_score(self):
         self.score += 1
-        with open("Day-24/snake_game__V2_highscore/data.txt", 'w') as file:
+        with open("Day-24-MailMerge/snake_game__V2_highscore/data.txt", 'w') as file:
             file.write(f"{self.score}")
         self.refresh()
 

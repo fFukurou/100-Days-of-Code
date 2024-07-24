@@ -8,13 +8,13 @@ from states import States
 
 screen = turtle.Screen()
 screen.title("U.S. States Game")
-image = "Day-25/US_states/blank_states_img.gif"
+image = "Day-25-StateGuess/US_states/blank_states_img.gif"
 screen.addshape(image)
 turtle.shape(image)
 
 score = 0
 
-data = pd.read_csv("Day-25/US_states/50_states.csv")
+data = pd.read_csv("Day-25-StateGuess/US_states/50_states.csv")
 
 correct_guesses = []
 states_to_learn = []
@@ -45,6 +45,6 @@ while game_is_on:
 
 states_to_learn = [m_state for m_state in data["state"] if m_state not in correct_guesses]
 
-pd.DataFrame(states_to_learn).to_csv("Day-25/US_states/missing_states.csv")
+pd.DataFrame(states_to_learn).to_csv("Day-25-StateGuess/US_states/missing_states.csv")
 
 screen.exitonclick()    

@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup   
 
 
-with open ("Day-45/scraping/website.html", encoding="utf8") as file:
+with open ("Day-45-Scraping/scraping_test/website.html", encoding="utf8") as file:
     contents = file.read()
 
 

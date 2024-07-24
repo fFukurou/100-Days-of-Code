@@ -54,18 +54,18 @@ def save():
             }
         }
         try:
-            with open(f"Day-30/Password_Manager_2/data.json", "r") as file:
+            with open(f"Day-30-NATOPasswordManager2/Password_Manager_2/data.json", "r") as file:
                 # Reading old data
                 data = json.load(file)
                 # Updading old data
                 data.update(new_data)
 
         except FileNotFoundError:
-            with open(f"Day-30/Password_Manager_2/data.json", "w") as file:
+            with open(f"Day-30-NATOPasswordManager2/Password_Manager_2/data.json", "w") as file:
                 json.dump(new_data, file, indent=4)
 
         else:
-            with open(f"Day-30/Password_Manager_2/data.json", "w") as file:
+            with open(f"Day-30-NATOPasswordManager2/Password_Manager_2/data.json", "w") as file:
                 # Saving old data
                 json.dump(data, file, indent=4)
 
@@ -78,7 +78,7 @@ def save():
 def search():
     site = entry_website.get().upper()
     try:
-        with open(f"Day-30/Password_Manager_2/data.json", "r") as file:
+        with open(f"Day-30-NATOPasswordManager2/Password_Manager_2/data.json", "r") as file:
             data = json.load(file)
 
         messagebox.showinfo(title=site.capitalize() + " password", message=f"Site: {site.capitalize()}\nPassword: {data[site]['password']}")
@@ -96,7 +96,7 @@ window.title("Password Manager")
 window.config(padx=50, pady=50)
 
 canvas = Canvas(width=200, height=200, highlightthickness=0)
-logo_img = PhotoImage(file="Day-30/Password_Manager_2/logo.png")
+logo_img = PhotoImage(file="Day-30-NATOPasswordManager2/Password_Manager_2/logo.png")
 canvas.create_image(100, 100, image=logo_img)
 canvas.grid(row=0, column=1)
 

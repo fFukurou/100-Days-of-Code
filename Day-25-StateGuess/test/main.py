@@ -3,7 +3,7 @@ import pandas
 
 """ temperatures = []
 
-with open(f"Day-25/test/weather_data.csv") as file:
+with open(f"Day-25-StateGuess/test/weather_data.csv") as file:
 
     data = csv.reader(file)
     for row in data:
@@ -14,7 +14,7 @@ with open(f"Day-25/test/weather_data.csv") as file:
 
 print(temperatures) """
 
-data = pandas.read_csv("Day-25/test/weather_data.csv")
+data = pandas.read_csv("Day-25-StateGuess/test/weather_data.csv")
 #transform dataframe to dict
 dict = data.to_dict()
 print(dict['day'][1])

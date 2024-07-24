@@ -9,7 +9,7 @@ quotes = []
 now = dt.datetime.now()
 
 if now.weekday() == 1:
-    with open("Day-32/tests/quotes.txt", "r") as file:
+    with open("Day-32-BirthdaySender/tests/quotes.txt", "r") as file:
         for line in file:
             quotes.append(line)
 
