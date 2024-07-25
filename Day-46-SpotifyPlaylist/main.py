@@ -48,7 +48,7 @@ spotify = spotipy.Spotify(
         client_secret=SPOTIFY_CLIENT_SECRET,
         show_dialog=True,
         cache_path="Day-46-SpotifyPlaylist/token.txt",
-        username="supevi1", 
+        username=SPOTIFY_USERNAME, 
     )
 )
 
