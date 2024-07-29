@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://127.0.0.1:5000/# -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Fukurou's Link Page</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../static/assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="../static/assets/css/noscript.css"
+    /></noscript>
+    <style>
+      .flipX video::-webkit-media-text-track-display {
+        transform: matrix(-1, 0, 0, 1, 0, 0) !important;
+      }
+      .flipXY video::-webkit-media-text-track-display {
+        transform: matrix(-1, 0, 0, -1, 0, 0) !important;
+      }
+      .flipXYX video::-webkit-media-text-track-display {
+        transform: matrix(1, 0, 0, -1, 0, 0) !important;
+      }
+    </style>
+    <style>
+      @keyframes blinkWarning {
+        0% {
+          color: red;
+        }
+        100% {
+          color: white;
+        }
+      }
+      @-webkit-keyframes blinkWarning {
+        0% {
+          color: red;
+        }
+        100% {
+          color: white;
+        }
+      }
+      .blinkWarning {
+        -webkit-animation: blinkWarning 1s linear infinite;
+        -moz-animation: blinkWarning 1s linear infinite;
+        animation: blinkWarning 1s linear infinite;
+      }
+    </style>
+  </head>
+  <body class="" contenteditable="true">
+    <div id="wrapper">
+      <div id="bg"></div>
+      <div id="overlay"></div>
+      <div id="main">
+        <!-- Header -->
+        <header id="header">
+          <h1>Fukurou</h1>
+          <p>Keep&nbsp; •&nbsp; Moving&nbsp; •&nbsp; Forward</p>
+          <nav>
+            <ul>
+              <li>
+                <a href="http://127.0.0.1:5000/#" class="icon brands fa-twitter"
+                  ><span class="label">Twitter</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5000/#"
+                  class="icon brands fa-facebook-f"
+                  ><span class="label">Facebook</span></a
+                >
+              </li>
+
+              <li>
+                <a href="http://127.0.0.1:5000/#" class="icon brands fa-github"
+                  ><span class="label">Github</span></a
+                >
+              </li>
+              <li>
+                <a href="http://127.0.0.1:5000/#" class="icon solid fa-envelope"
+                  ><span class="label">Email</span></a
+                >
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <span class="copyright"
+            >© Untitled. Design:
+            <a href="http://html5up.net/">HTML5 UP</a>.</span
+          >
+        </footer>
+      </div>
+    </div>
+    <script>
+      window.onload = function () {
+        document.body.classList.remove("is-preload");
+      };
+      window.ontouchmove = function () {
+        return false;
+      };
+      window.onorientationchange = function () {
+        document.body.scrollTop = 0;
+      };
+    </script>
+  </body>
+</html>
